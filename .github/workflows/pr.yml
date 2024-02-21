@@ -28,5 +28,5 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
-      - run: export TITLE="my_pr_title"
+      - run: echo "TITLE=my_pr_title"  >> "$GITHUB_ENV"
       - run: gh pr create --base main --head testbranch --title "$TITLE" --body "just a pr..."
