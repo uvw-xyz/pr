@@ -23,8 +23,9 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   
   create-pr:
-    - uses: actions/checkout@v4
-    - name: Create an output
-      run: echo "my_pr_title" >> "$TITLE"
-    - run: gh pr create --base main --head testbranch --title $TITLE
-    
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create an output
+        run: echo "my_pr_title" >> "$TITLE"
+      - run: gh pr create --base main --head testbranch --title $TITLE
