@@ -24,6 +24,8 @@ jobs:
   
   create-pr:
     runs-on: ubuntu-latest
+    permissions: 
+      pull-requests: write
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
