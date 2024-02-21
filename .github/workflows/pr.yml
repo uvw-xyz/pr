@@ -27,5 +27,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Create an output
-        run: echo "my_pr_title" >> "$TITLE"
+        run: export TITLE="my_pr_title"
       - run: gh pr create --base main --head testbranch --title $TITLE
