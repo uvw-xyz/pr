@@ -26,6 +26,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create an output
-        run: export TITLE="my_pr_title"
-      - run: gh pr create --base main --head testbranch --title $TITLE
+      - run: export TITLE="my_pr_title"
+      - run: gh pr create --base main --head testbranch --title "$TITLE"
